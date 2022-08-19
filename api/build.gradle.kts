@@ -1,4 +1,4 @@
 dependencies {
   compileOnly(paperApiLibrary)
-  compileOnly(configurateJacksonLibrary)
+  compileOnly(configurateJacksonLibrary) // FIXME
 }

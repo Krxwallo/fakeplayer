@@ -40,9 +40,14 @@ public final class FakePlayerCommand implements TabExecutor {
         });
       }
       case "create" -> {
-        final var count = Integer.parseInt(args[1]);
-        for (var index = 0; index < count; index++) {
-          AiPlayer.create(UUID.randomUUID().toString().substring(0, 7), player.getLocation()).connect();
+        if (args.length == 1) {
+          sender.sendMessage("&cMissing required count argument");
+        }
+        else {
+          final var count = Integer.parseInt(args[1]);
+          for (var index = 0; index < count; index++) {
+            AiPlayer.create(UUID.randomUUID().toString().substring(0, 7), player.getLocation()).connect();
+          }
         }
       }
     }

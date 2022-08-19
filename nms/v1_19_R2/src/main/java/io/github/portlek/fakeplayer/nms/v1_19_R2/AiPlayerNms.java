@@ -1,4 +1,4 @@
-package io.github.portlek.fakeplayer.nms.v1_18_R2;
+package io.github.portlek.fakeplayer.nms.v1_19_R2;
 
 import com.github.steveice10.mc.auth.service.SessionService;
 import com.github.steveice10.mc.protocol.MinecraftConstants;
@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.Delegate;
 import lombok.experimental.FieldDefaults;
+import org.apache.logging.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
@@ -27,6 +28,9 @@ final class AiPlayerNms implements AiPlayer {
 
   @Override
   public void connect() {
+    LogManager.getLogger().info("connect() called on AiPlayerNms");
+    LogManager.getLogger().info("host = " + FakePlayerConfig.instance().host());
+    LogManager.getLogger().info("port = " + FakePlayerConfig.instance().port());
     final var client = new TcpClientSession(
       FakePlayerConfig.instance().host(),
       FakePlayerConfig.instance().port(),

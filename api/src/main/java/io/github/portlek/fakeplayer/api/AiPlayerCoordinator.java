@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * a class that representsAI player coordinator.
+ * a class that represents AI player coordinator.
  */
 @UtilityClass
 @Accessors(fluent = true)
